@@ -1,0 +1,55 @@
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+
+    <title>citationGeneratorApp</title>
+
+    <link rel='stylesheet' type='text/css' href='static/css/bootstrap.css'/>
+    <link rel='stylesheet' type='text/css' href='static/css/bootstrap-theme.css'/>
+    <link rel="stylesheet/less" type="text/css" href='static/css/app.css' />
+
+    <style>
+        .test-div {
+            border:1px solid black;
+            width:100px;
+            height:100px;
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="angularApp" ng-app="citationGeneratorApp" ng-controller="DefaultController">
+
+    <div id="angularAppTest" style="border:1px solid red; padding:10px;">
+        <div class="test-div" ng-click="clickHandler()">HELLO!!!</div>
+
+        <input ng-model="data.modal.title" />
+        <span ng-bind-html="data.modal.title"></span>
+        <br/>
+
+        <input ng-model="data.modal.body" />
+        <span ng-bind-html="data.modal.body"></span>
+        <br/>
+    </div>
+
+
+    <ng-include src="data.url.form"></ng-include>
+
+</div>
+
+    <script src="static/js/angular.js"></script>
+    <script src="static/js/angular-sanitize.js"></script>
+
+    <script src="angularjs/app.js"></script>
+    <script src="angularjs/controllers.js"></script>
+    <script src="angularjs/directives.js"></script>
+    <script src="angularjs/filters.js"></script>
+    <script src="angularjs/services.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,434 @@
+<div class="row">
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-12 aligned-box item-form manual-element" id="enter-citation">
+        <h1>Create your APA book citation</h1>
+        <form novalidate="novalidate" class="simple_form new_item" id="new_item" action="/apa/cite-a-book/create" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="b5JQSuVCqZLfJA2I70xNry/QrNksa7WlsupuMwoAsoNffOuK9qtxgUTzVwlxxyAjKISaIvhe7dxuO37Um/Yc9w=="><div class="form-group hidden item_bibme_id"><input class="hidden form-control" type="hidden" name="item[bibme_id]" id="item_bibme_id"></div>
+            <p>Author Name(s)</p>
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-3">
+                            <label class="string optional control-label" for="item_first_name">First name</label>
+                            <input class="string optional form-control" type="text" name="item[contributors_attributes][0][first_name]" id="item_contributors_attributes_0_first_name">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="string optional control-label" for="item_last_name">Last name</label>
+                            <input class="string optional form-control" type="text" name="item[contributors_attributes][0][last_name]" id="item_contributors_attributes_0_last_name">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="string optional control-label" for="item_contributor_type">Contributor type</label>
+                            <select include_blank="false" class="select optional form-control" name="item[contributors_attributes][0][contributor_type]" id="item_contributors_attributes_0_contributor_type"><option value="author">author</option>
+                                <option value="contributor">contributor</option>
+                                <option value="editor">editor</option>
+                                <option value="compiler">compiler</option>
+                                <option value="translator">translator</option></select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <div class="toggle">
+                                <input type="hidden" name="add_contributor" id="add_contributor" value="false">
+                                <a class="add_contributor" href="#">+ Add Author</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a data-toggle="popover" data-content="Author and editor names include the last name and initials for first and middle names (CM will initialize full names for you). Include up to seven authors. If more, follow sixth author with three periods and then the final author. If author is a group, spell out the group name (i.e. National Institute of Mental Health) enter full name as author's last name. If no author is given, leave blank." data-placement="right" class="field-help" href="javascript:;" data-original-title="" title="">Help</a>
+                </div>
+            </div>
+
+            <div class="book_title-fields row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="string optional control-label" for="item_book_title">Book title</label>
+                            <input class="string optional form-control" type="text" name="item[book_title]" id="item_book_title">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a data-toggle="popover" data-content="Only the first word in the title and subtitle should be capitalized (first letter). CM will process this if other words are capitalized. However, proper nouns should also be capitalized, and CM can not identify such words. So you will have to fix this after copying and pasting the citation." data-placement="right" class="field-help" href="javascript:;" data-original-title="" title="">Help</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="item_volume_number">Volume</label>
+                            <input class="string optional" type="text" name="item[volume_number]" id="item_volume_number">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="item_edition_number">Edition</label>
+                            <input class="string optional" type="text" name="item[edition_number]" id="item_edition_number">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="string optional control-label control-label" for="item_page_numbers">Page numbers</label>
+                            <input class="string optional" type="text" name="item[page_numbers]" id="item_page_numbers">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a data-toggle="popover" data-content="If second or greater edition, enter as sequenced (i.e. 2nd, 3rd, 4th, etc.). If the book is a volume in a set, include volume number. Enter inclusive page numbers to indicate where the cited information appears." data-placement="right" class="field-help" href="javascript:;" data-original-title="" title="">Help</a>
+                </div>
+            </div>
+
+            <div class="city-fields row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="string optional control-label" for="item_city">City</label>
+                            <input class="string optional form-control" type="text" name="item[city]" id="item_city">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a data-toggle="popover" data-content="If the publisher is inside the U.S. include the city a comma (,) and the postal abbreviation of the state. If the publisher is outside the U.S. include the city a comma (,) and the full spelling of the country." data-placement="right" class="field-help" href="javascript:;" data-original-title="" title="">Help</a>
+                </div>
+            </div>
+            <div class="row state-fields">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="string optional control-label" for="item_state">State</label>
+                            <input class="string optional form-control" type="text" name="item[state]" id="item_state">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+            </div>
+            <div class="country-fields row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="country optional control-label" for="item_country">Country</label>
+                            <select class="country optional form-control" name="item[country]" id="item_country"><option value=""></option>
+                                <option value="AF">Afghanistan</option>
+                                <option value="AX">Åland Islands</option>
+                                <option value="AL">Albania</option>
+                                <option value="DZ">Algeria</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AD">Andorra</option>
+                                <option value="AO">Angola</option>
+                                <option value="AI">Anguilla</option>
+                                <option value="AQ">Antarctica</option>
+                                <option value="AG">Antigua and Barbuda</option>
+                                <option value="AR">Argentina</option>
+                                <option value="AM">Armenia</option>
+                                <option value="AW">Aruba</option>
+                                <option value="AU">Australia</option>
+                                <option value="AT">Austria</option>
+                                <option value="AZ">Azerbaijan</option>
+                                <option value="BS">Bahamas</option>
+                                <option value="BH">Bahrain</option>
+                                <option value="BD">Bangladesh</option>
+                                <option value="BB">Barbados</option>
+                                <option value="BY">Belarus</option>
+                                <option value="BE">Belgium</option>
+                                <option value="BZ">Belize</option>
+                                <option value="BJ">Benin</option>
+                                <option value="BM">Bermuda</option>
+                                <option value="BT">Bhutan</option>
+                                <option value="BO">Bolivia, Plurinational State of</option>
+                                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                                <option value="BA">Bosnia and Herzegovina</option>
+                                <option value="BW">Botswana</option>
+                                <option value="BV">Bouvet Island</option>
+                                <option value="BR">Brazil</option>
+                                <option value="IO">British Indian Ocean Territory</option>
+                                <option value="BN">Brunei Darussalam</option>
+                                <option value="BG">Bulgaria</option>
+                                <option value="BF">Burkina Faso</option>
+                                <option value="BI">Burundi</option>
+                                <option value="KH">Cambodia</option>
+                                <option value="CM">Cameroon</option>
+                                <option value="CA">Canada</option>
+                                <option value="CV">Cape Verde</option>
+                                <option value="KY">Cayman Islands</option>
+                                <option value="CF">Central African Republic</option>
+                                <option value="TD">Chad</option>
+                                <option value="CL">Chile</option>
+                                <option value="CN">China</option>
+                                <option value="CX">Christmas Island</option>
+                                <option value="CC">Cocos (Keeling) Islands</option>
+                                <option value="CO">Colombia</option>
+                                <option value="KM">Comoros</option>
+                                <option value="CG">Congo</option>
+                                <option value="CD">Congo, The Democratic Republic of the</option>
+                                <option value="CK">Cook Islands</option>
+                                <option value="CR">Costa Rica</option>
+                                <option value="CI">Côte d'Ivoire</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CU">Cuba</option>
+                                <option value="CW">Curaçao</option>
+                                <option value="CY">Cyprus</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="DK">Denmark</option>
+                                <option value="DJ">Djibouti</option>
+                                <option value="DM">Dominica</option>
+                                <option value="DO">Dominican Republic</option>
+                                <option value="EC">Ecuador</option>
+                                <option value="EG">Egypt</option>
+                                <option value="SV">El Salvador</option>
+                                <option value="GQ">Equatorial Guinea</option>
+                                <option value="ER">Eritrea</option>
+                                <option value="EE">Estonia</option>
+                                <option value="ET">Ethiopia</option>
+                                <option value="FK">Falkland Islands (Malvinas)</option>
+                                <option value="FO">Faroe Islands</option>
+                                <option value="FJ">Fiji</option>
+                                <option value="FI">Finland</option>
+                                <option value="FR">France</option>
+                                <option value="GF">French Guiana</option>
+                                <option value="PF">French Polynesia</option>
+                                <option value="TF">French Southern Territories</option>
+                                <option value="GA">Gabon</option>
+                                <option value="GM">Gambia</option>
+                                <option value="GE">Georgia</option>
+                                <option value="DE">Germany</option>
+                                <option value="GH">Ghana</option>
+                                <option value="GI">Gibraltar</option>
+                                <option value="GR">Greece</option>
+                                <option value="GL">Greenland</option>
+                                <option value="GD">Grenada</option>
+                                <option value="GP">Guadeloupe</option>
+                                <option value="GU">Guam</option>
+                                <option value="GT">Guatemala</option>
+                                <option value="GG">Guernsey</option>
+                                <option value="GN">Guinea</option>
+                                <option value="GW">Guinea-Bissau</option>
+                                <option value="GY">Guyana</option>
+                                <option value="HT">Haiti</option>
+                                <option value="HM">Heard Island and McDonald Islands</option>
+                                <option value="VA">Holy See (Vatican City State)</option>
+                                <option value="HN">Honduras</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IS">Iceland</option>
+                                <option value="IN">India</option>
+                                <option value="ID">Indonesia</option>
+                                <option value="IR">Iran, Islamic Republic of</option>
+                                <option value="IQ">Iraq</option>
+                                <option value="IE">Ireland</option>
+                                <option value="IM">Isle of Man</option>
+                                <option value="IL">Israel</option>
+                                <option value="IT">Italy</option>
+                                <option value="JM">Jamaica</option>
+                                <option value="JP">Japan</option>
+                                <option value="JE">Jersey</option>
+                                <option value="JO">Jordan</option>
+                                <option value="KZ">Kazakhstan</option>
+                                <option value="KE">Kenya</option>
+                                <option value="KI">Kiribati</option>
+                                <option value="KP">Korea, Democratic People's Republic of</option>
+                                <option value="KR">Korea, Republic of</option>
+                                <option value="KW">Kuwait</option>
+                                <option value="KG">Kyrgyzstan</option>
+                                <option value="LA">Lao People's Democratic Republic</option>
+                                <option value="LV">Latvia</option>
+                                <option value="LB">Lebanon</option>
+                                <option value="LS">Lesotho</option>
+                                <option value="LR">Liberia</option>
+                                <option value="LY">Libya</option>
+                                <option value="LI">Liechtenstein</option>
+                                <option value="LT">Lithuania</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="MO">Macao</option>
+                                <option value="MK">Macedonia, Republic of</option>
+                                <option value="MG">Madagascar</option>
+                                <option value="MW">Malawi</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="MV">Maldives</option>
+                                <option value="ML">Mali</option>
+                                <option value="MT">Malta</option>
+                                <option value="MH">Marshall Islands</option>
+                                <option value="MQ">Martinique</option>
+                                <option value="MR">Mauritania</option>
+                                <option value="MU">Mauritius</option>
+                                <option value="YT">Mayotte</option>
+                                <option value="MX">Mexico</option>
+                                <option value="FM">Micronesia, Federated States of</option>
+                                <option value="MD">Moldova, Republic of</option>
+                                <option value="MC">Monaco</option>
+                                <option value="MN">Mongolia</option>
+                                <option value="ME">Montenegro</option>
+                                <option value="MS">Montserrat</option>
+                                <option value="MA">Morocco</option>
+                                <option value="MZ">Mozambique</option>
+                                <option value="MM">Myanmar</option>
+                                <option value="NA">Namibia</option>
+                                <option value="NR">Nauru</option>
+                                <option value="NP">Nepal</option>
+                                <option value="AN">Netherlands Antilles</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="NC">New Caledonia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="NI">Nicaragua</option>
+                                <option value="NE">Niger</option>
+                                <option value="NG">Nigeria</option>
+                                <option value="NU">Niue</option>
+                                <option value="NF">Norfolk Island</option>
+                                <option value="MP">Northern Mariana Islands</option>
+                                <option value="NO">Norway</option>
+                                <option value="OM">Oman</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="PW">Palau</option>
+                                <option value="PS">Palestine, State of</option>
+                                <option value="PA">Panama</option>
+                                <option value="PG">Papua New Guinea</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="PE">Peru</option>
+                                <option value="PH">Philippines</option>
+                                <option value="PN">Pitcairn</option>
+                                <option value="PL">Poland</option>
+                                <option value="PT">Portugal</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="QA">Qatar</option>
+                                <option value="RE">Réunion</option>
+                                <option value="RO">Romania</option>
+                                <option value="RU">Russian Federation</option>
+                                <option value="RW">Rwanda</option>
+                                <option value="BL">Saint Barthélemy</option>
+                                <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                <option value="KN">Saint Kitts and Nevis</option>
+                                <option value="LC">Saint Lucia</option>
+                                <option value="MF">Saint Martin (French part)</option>
+                                <option value="PM">Saint Pierre and Miquelon</option>
+                                <option value="VC">Saint Vincent and the Grenadines</option>
+                                <option value="WS">Samoa</option>
+                                <option value="SM">San Marino</option>
+                                <option value="ST">Sao Tome and Principe</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="SN">Senegal</option>
+                                <option value="RS">Serbia</option>
+                                <option value="SC">Seychelles</option>
+                                <option value="SL">Sierra Leone</option>
+                                <option value="SG">Singapore</option>
+                                <option value="SX">Sint Maarten (Dutch part)</option>
+                                <option value="SK">Slovakia</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="SB">Solomon Islands</option>
+                                <option value="SO">Somalia</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                <option value="SS">South Sudan</option>
+                                <option value="ES">Spain</option>
+                                <option value="LK">Sri Lanka</option>
+                                <option value="SD">Sudan</option>
+                                <option value="SR">Suriname</option>
+                                <option value="SJ">Svalbard and Jan Mayen</option>
+                                <option value="SZ">Swaziland</option>
+                                <option value="SE">Sweden</option>
+                                <option value="CH">Switzerland</option>
+                                <option value="SY">Syrian Arab Republic</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="TJ">Tajikistan</option>
+                                <option value="TZ">Tanzania, United Republic of</option>
+                                <option value="TH">Thailand</option>
+                                <option value="TL">Timor-Leste</option>
+                                <option value="TG">Togo</option>
+                                <option value="TK">Tokelau</option>
+                                <option value="TO">Tonga</option>
+                                <option value="TT">Trinidad and Tobago</option>
+                                <option value="TN">Tunisia</option>
+                                <option value="TR">Turkey</option>
+                                <option value="TM">Turkmenistan</option>
+                                <option value="TC">Turks and Caicos Islands</option>
+                                <option value="TV">Tuvalu</option>
+                                <option value="UG">Uganda</option>
+                                <option value="UA">Ukraine</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="UM">United States Minor Outlying Islands</option>
+                                <option value="US">United States</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="UZ">Uzbekistan</option>
+                                <option value="VU">Vanuatu</option>
+                                <option value="VE">Venezuela, Bolivarian Republic of</option>
+                                <option value="VN">Viet Nam</option>
+                                <option value="VG">Virgin Islands, British</option>
+                                <option value="VI">Virgin Islands, U.S.</option>
+                                <option value="WF">Wallis and Futuna</option>
+                                <option value="EH">Western Sahara</option>
+                                <option value="YE">Yemen</option>
+                                <option value="ZM">Zambia</option>
+                                <option value="ZW">Zimbabwe</option></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+            </div>
+            <div class="publisher-fields row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="string optional control-label" for="item_publisher">Publisher</label>
+                            <input class="string optional form-control" type="text" name="item[publisher]" id="item_publisher">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a data-toggle="popover" data-content="Full name of publishing company." data-placement="right" class="field-help" href="javascript:;" data-original-title="" title="">Help</a>
+                </div>
+            </div>
+            <div class="row year-fields">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="string optional control-label" for="item_year">Year</label>
+                            <input class="string optional form-control" type="text" name="item[year]" id="item_year">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a data-toggle="popover" data-content="For publication date, enter the year only in four digits." data-placement="right" class="field-help" href="javascript:;" data-original-title="" title="">Help</a>
+                </div>
+            </div>
+            <div class="chapter_title-fields row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <label class="string optional control-label" for="item_chapter_title">Chapter title</label>
+                            <input class="string optional form-control" type="text" name="item[chapter_title]" id="item_chapter_title">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="form-inline row">
+                        <div class="form-group col-md-12">
+                            <div class="add-annotation-link">
+                                <a class="add-annotation" href="#">+ Add annotation</a>
+                            </div>
+                            <div class="annotation-field hidden">
+                                <label>Annotation</label>
+                                <textarea class="text optional" name="item[primary_annotation]" id="item_primary_annotation"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align:center;">
+                    <input type="submit" name="commit" value="Create Citation" class="btn btn-citation">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+</div>
+
