@@ -40,6 +40,13 @@
 
     <ng-include src="data.url.form"></ng-include>
 
+    <p>
+        <span ng-model="data.form.result | generateCitation : style1"></span>
+    </p>
+    <p>
+        {{data.form.result | generateCitation : style1}}
+    </p>
+
 </div>
 
     <script src="static/js/angular.js"></script>
