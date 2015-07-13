@@ -37,20 +37,25 @@ jQuery(document).ready(function () {
     var textDiv = jQuery('#text');
     var text;
     jQuery('#uppercase').on("click", function (e) {
-        textDiv.addClass( 'btn-transform-uppercase' );
+        textDiv.addClass('btn-transform-uppercase');
+        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-title');
     });
     jQuery('#lowercase').on("click", function (e) {
-        textDiv.addClass( 'btn-transform-lowercase' );
+        textDiv.addClass('btn-transform-lowercase');
+        textDiv.removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
     });
     jQuery('#title').on("click", function (e) {
-        textDiv.addClass( 'btn-transform-title' );
+        textDiv.addClass('btn-transform-title');
+        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase');
     });
     jQuery('#sentence').on("click", function (e) {
+        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
+
         text = textDiv.val();
         var lines = text.split('.');
         var output = '';
         jQuery.each(lines, function(key, line) {
-            output += line.charAt(0).toUpperCase() + line.slice(1);
+            output += line.trim().charAt(0).toUpperCase() + line.trim().slice(1);
             if(line.length !== 0){
                 output += '.';
             }
