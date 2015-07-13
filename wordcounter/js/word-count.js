@@ -34,27 +34,35 @@ jQuery(document).ready(function () {
         }
     }, false);
 
-    var text = jQuery('#text');
+    var textDiv = jQuery('#text');
+    var text;
     jQuery('#uppercase').on("click", function (e) {
-        text.addClass( 'btn-transform-uppercase' );
+        textDiv.addClass( 'btn-transform-uppercase' );
     });
     jQuery('#lowercase').on("click", function (e) {
-        text.addClass( 'btn-transform-lowercase' );
+        textDiv.addClass( 'btn-transform-lowercase' );
     });
     jQuery('#title').on("click", function (e) {
-        text.addClass( 'btn-transform-title' );
+        textDiv.addClass( 'btn-transform-title' );
     });
     jQuery('#sentence').on("click", function (e) {
-        var lines = text.val().split('.');
+        text = textDiv.val();
+        var lines = text.split('.');
         var output = '';
         jQuery.each(lines, function(key, line) {
-            output += line.charAt(0).toUpperCase() + line.slice(1) + '.';
+            output += line.charAt(0).toUpperCase() + line.slice(1);
+            if(line.length !== 0){
+                output += '.';
+            }
         });
-        text.val(output);
+        textDiv.val(output);
     });
     jQuery('#clear').on("click", function (e) {
-        text.val('');
+        textDiv.val('');
         jQuery('#result').hide();
+        textDiv.removeClass( 'btn-transform-uppercase' );
+        textDiv.removeClass( 'btn-transform-lowercase' );
+        textDiv.removeClass( 'btn-transform-title' );
     });
 
 });
