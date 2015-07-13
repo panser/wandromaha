@@ -1,0 +1,71 @@
+.wordcounter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+}
+
+.results {
+    text-align: center;
+}
+
+.btn {
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 14px;
+    background: #328dc9;
+    padding: 10px 15px 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #3b9edb;
+    text-decoration: none;
+}
+
+.btn-clear {
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    font-family: Arial;
+    color: #000;
+    font-size: 14px;
+    background: #CDCDCD;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-clear:hover {
+    background: #a3a3a3;
+    text-decoration: none;
+}
+
+.btn-transform {
+    display:block;
+}
+
+.btn-transform li {
+    display: inline-block;
+    padding-right: 5px;
+    list-style-type: none;
+}
+
+.btn-transform-uppercase {
+    text-transform: uppercase;
+}
+
+.btn-transform-lowercase {
+    text-transform: lowercase;
+}
+
+.btn-transform-title {
+    text-transform: capitalize;
+}
+
+
