@@ -56,7 +56,8 @@ jQuery(document).ready(function () {
 
         //var lines = textDiv.text().match( /[^\.!\?]+[\.!\?]+/g );
         //var output = '<span class="parse-sentence">' + lines.join('</span><span class="parse-sentence">') + '</span>';
-        text = text.replace(/^(\s*)([a-zA-Z0-9]+)(.*)([\.!\?])(\s*)([a-zA-Z0-9]+)/g, '$1<span class="parse-first-word">$2</span>$3<span class="parse-punctuation">$4</span>$5<span class="parse-first-word">$6</span>');
+        text = text.replace(/([\.!\?])(\s*)([a-zA-Z0-9]+)/g, '<span class="parse-punctuation">$1</span>$2<span class="parse-first-word">$3</span>');
+        text = text.replace(/(\w+)/, '<span class="parse-first-word">$1</span>');
         textDiv.text('');
         textDiv.append(text);
 
