@@ -35,39 +35,40 @@ jQuery(document).ready(function () {
     }, false);
 
     var textDiv = jQuery('#text');
-    var text;
     jQuery('#uppercase').on("click", function (e) {
-        textDiv.addClass('btn-transform-uppercase');
         textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-title');
+        textDiv.find('.parse-first-word').removeClass('btn-transform-title');
+        textDiv.addClass('btn-transform-uppercase');
     });
     jQuery('#lowercase').on("click", function (e) {
-        textDiv.addClass('btn-transform-lowercase');
         textDiv.removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
+        textDiv.find('.parse-first-word').removeClass('btn-transform-title');
+        textDiv.addClass('btn-transform-lowercase');
     });
     jQuery('#title').on("click", function (e) {
-        textDiv.addClass('btn-transform-title');
         textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase');
+        textDiv.find('.parse-first-word').removeClass('btn-transform-title');
+        textDiv.addClass('btn-transform-title');
     });
     jQuery('#sentence').on("click", function (e) {
         textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
+        var text = textDiv.text();
 
-        text = textDiv.val();
-        var lines = text.split('.');
-        var output = '';
-        jQuery.each(lines, function(key, line) {
-            output += line.trim().charAt(0).toUpperCase() + line.trim().slice(1);
-            if(line.length !== 0){
-                output += '.';
-            }
-        });
-        textDiv.val(output);
+        //var lines = textDiv.text().match( /[^\.!\?]+[\.!\?]+/g );
+        //var output = '<span class="parse-sentence">' + lines.join('</span><span class="parse-sentence">') + '</span>';
+        text = text.replace(/^(\s*)([a-zA-Z0-9]+)(.*)([\.!\?])(\s*)([a-zA-Z0-9]+)/g, '$1<span class="parse-first-word">$2</span>$3<span class="parse-punctuation">$4</span>$5<span class="parse-first-word">$6</span>');
+        textDiv.text('');
+        textDiv.append(text);
+
+        textDiv.find('.parse-first-word').addClass('btn-transform-title');
     });
     jQuery('#clear').on("click", function (e) {
-        textDiv.val('');
+        textDiv.text('');
         jQuery('#result').hide();
         textDiv.removeClass( 'btn-transform-uppercase' );
         textDiv.removeClass( 'btn-transform-lowercase' );
         textDiv.removeClass( 'btn-transform-title' );
+        textDiv.find('.parse-first-word').removeClass('btn-transform-title');
     });
 
 });
