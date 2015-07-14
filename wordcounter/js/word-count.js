@@ -34,42 +34,65 @@ jQuery(document).ready(function () {
         }
     }, false);
 
-    var textDiv = jQuery('#text');
-    jQuery('#uppercase').on("click", function (e) {
-        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-title');
+
+
+        var toggleClass = function(jqElement, className){
+        var textDiv = jQuery('#text');
+        jqElement.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
         textDiv.find('.parse-first-word').removeClass('btn-transform-title');
-        textDiv.addClass('btn-transform-uppercase');
+
+        textDiv.addClass(className);
+    };
+    var undoManager = new UndoManager();
+
+    jQuery('#uppercase').on("click", function (e) {
+        var textDiv = jQuery('#text');
+        var undoElement = textDiv.clone();
+        var redoElement;
+        toggleClass(textDiv, 'btn-transform-uppercase');
+        undoManager.add({
+            undo: function() {
+                redoElement = jQuery('#text').clone();
+                jQuery('#text').replaceWith(undoElement);
+            },
+            redo: function() {
+                jQuery('#text').replaceWith(redoElement);
+            }
+        });
     });
     jQuery('#lowercase').on("click", function (e) {
-        textDiv.removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
-        textDiv.find('.parse-first-word').removeClass('btn-transform-title');
-        textDiv.addClass('btn-transform-lowercase');
+        var textDiv = jQuery('#text');
+        toggleClass(textDiv, 'btn-transform-lowercase')
     });
     jQuery('#title').on("click", function (e) {
-        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase');
-        textDiv.find('.parse-first-word').removeClass('btn-transform-title');
-        textDiv.addClass('btn-transform-title');
+        var textDiv = jQuery('#text');
+        toggleClass(textDiv, 'btn-transform-title')
     });
     jQuery('#sentence').on("click", function (e) {
-        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
+        var textDiv = jQuery('#text');
         var text = textDiv.text();
-
-        //var lines = textDiv.text().match( /[^\.!\?]+[\.!\?]+/g );
-        //var output = '<span class="parse-sentence">' + lines.join('</span><span class="parse-sentence">') + '</span>';
         text = text.replace(/([\.!\?])(\s*)([a-zA-Z0-9]+)/g, '<span class="parse-punctuation">$1</span>$2<span class="parse-first-word">$3</span>');
         text = text.replace(/(\w+)/, '<span class="parse-first-word">$1</span>');
         textDiv.text('');
         textDiv.append(text);
 
+        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
         textDiv.find('.parse-first-word').addClass('btn-transform-title');
     });
     jQuery('#clear').on("click", function (e) {
+        var textDiv = jQuery('#text');
         textDiv.text('');
         jQuery('#result').hide();
-        textDiv.removeClass( 'btn-transform-uppercase' );
-        textDiv.removeClass( 'btn-transform-lowercase' );
-        textDiv.removeClass( 'btn-transform-title' );
+        textDiv.removeClass('btn-transform-lowercase').removeClass('btn-transform-uppercase').removeClass('btn-transform-title');
         textDiv.find('.parse-first-word').removeClass('btn-transform-title');
+    });
+
+
+    jQuery('#undo').on("click", function (e) {
+        undoManager.undo();
+    });
+    jQuery('#redo').on("click", function (e) {
+        undoManager.redo();
     });
 
 });
