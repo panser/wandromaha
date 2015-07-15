@@ -67,3 +67,7 @@
 .btn-transform-title {
     text-transform: capitalize;
 }
+
+button:disabled {
+    background: #dddddd;
+}
