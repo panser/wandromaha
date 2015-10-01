@@ -6,11 +6,15 @@ jQuery(document).ready(function () {
 
     function wordCount( val ){
         try {
+            var lineCount = val.split(/\r*\n/).length -1;
+            if(lineCount === 0) {
+                lineCount++;
+            }
             var wordCountObj = {
                 charactersNoSpaces: val.replace(/\s+/g, '').length,
                 characters: val.length,
                 words: val.match(/\S+/g).length,
-                lines: val.split(/\r*\n/).length
+                lines: lineCount
             }
         }catch(err) {
             jQuery('#result').hide();
@@ -21,7 +25,7 @@ jQuery(document).ready(function () {
     textarea.addEventListener("input", function(){
         jQuery('#result').show();
 
-        var c = wordCount( this.value );
+        var c = wordCount( this.innerText );
         try {
             div.innerHTML = (
             "<br>Characters (no spaces): " + c.charactersNoSpaces +
