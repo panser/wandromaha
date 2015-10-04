@@ -24,6 +24,7 @@ jQuery(document).ready(function () {
 
     textarea.addEventListener("input", function(){
         jQuery('#result').show();
+        jQuery('#text span').removeAttr("style"); //fix for button Sentence
 
         var c = wordCount( this.innerText );
         try {

@@ -52,8 +52,19 @@ jQuery(document).ready(function () {
     jQuery('#sentence').on("click", function (e) {
         undoManagerForElement('#text');
         var textDiv = jQuery('#text');
+        var html = textDiv.html();
+        //заменяем все html-теги перевода строки, на обычные ASCII-знаки
+        html = html.replace(/(<\/div>)(<div>)/g, '$1\r\n$2');
+        html = html.replace(/()<br>()/g, '$1\r\n$2');
+        textDiv.text('');
+        textDiv.append(html);
+
         var text = textDiv.text();
+        //оборачуем в отдельный span все первые слова из предложений и разделители строк
         text = text.replace(/([\.!\?])(\s*)([a-zA-Z0-9]+)/g, '<span class="parse-punctuation">$1</span>$2<span class="parse-first-word">$3</span>');
+        //заменяем все ASCII-знаки перевода строки на html-теги
+        text = text.replace(/(?:\r\n|\r|\n)/g, '<br />');
+        //оборачуем в отдельный span первое слово и всего текста
         text = text.replace(/(\w+)/, '<span class="parse-first-word">$1</span>');
         textDiv.text('');
         textDiv.append(text);
